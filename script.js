@@ -96,8 +96,13 @@ pessoa = { ...pessoa, rg: 55.66677759 } //usando assim voce altera ou adiciona a
 console.log(pessoa);
 
 //rest parameter
-function somarTodos(n1, n2, n3) {
-    return n1 + n2 + n3
+//function somarTodos(n1, n2, n3) {
+//  return n1 + n2 + n3
+//}
+
+function somarTodos(...args) {
+    return args.reduce((acc, atual) => acc += atual, 0)
 }
 
-console.log(somarTodos(4, 5, 6))
+
+console.log(somarTodos(4, 5, 10, 25, 100, 6))
